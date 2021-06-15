@@ -470,6 +470,14 @@ body.dark-theme{
     width: 70%;
 }
 
+.skills-sql{
+    width: 80%;
+}
+
+.skills-nosql{
+    width: 60%;
+}
+
 .skills-algorithms{
     width: 80%;
 }
@@ -480,6 +488,42 @@ body.dark-theme{
 
 .skills-python{
     width: 60%;
+}
+
+.skills-angular{
+    width: 90%;
+}
+
+.skills-javascript{
+    width: 80%;
+}
+
+.skills-typescript{
+    width: 80%;
+}
+
+.skills-html{
+    width: 70%;
+}
+
+.skills-css{
+    width: 60%;
+}
+
+.skills-aws{
+    width: 60%;
+}
+
+.skills-jenkins{
+    width: 70%;
+}
+
+.skills-docker{
+    width: 80%;
+}
+
+.skills-github{
+    width: 80%;
 }
 
 .qualification-tabs{
@@ -1006,5 +1050,9 @@ body.dark-theme{
 
     .contact-input{
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container{
+        grid-template-columns: 3fr 2fr 2fr;
     }
 }
