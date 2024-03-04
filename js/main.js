@@ -8,7 +8,8 @@ if (navToggle) {
     });
 }
 
-
+localStorage.setItem('selected-theme', 'dark');
+localStorage.setItem('selected-icon', 'dark_mode');
 
 if (navClose) {
     navClose.addEventListener('click', () => {
@@ -36,25 +37,29 @@ const lightThemeText = 'light';
 
 const selectedTheme = localStorage.getItem('selected-theme');
 const selectedIcon = localStorage.getItem('selected-icon');
-
-const getCurrentTheme = () => themeButton.textContent === darkTheme ? 'dark' : 'light';
+console.log(themeButton)
+const getCurrentTheme = () => themeButton.innerHTML === darkTheme ? 'dark' : 'light';
 
 if (selectedTheme) {
     document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](getCurrentTheme() + '-theme');
+    themeButton.innerText = selectedIcon
+} else {
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove']('dark-theme');
     themeButton.innerText = selectedIcon
 }
 
 function toggleTheme() {
     const newTheme = getCurrentTheme() === darkThemeText ? lightThemeText : darkThemeText;
+    console.log(newTheme)
     document.body.classList = '';
-    document.body.classList.toggle(getCurrentTheme() + '-theme');
-    localStorage.setItem('selected-theme', getCurrentTheme());
+    document.body.classList.toggle(newTheme + '-theme');
+    localStorage.setItem('selected-theme', newTheme);
     localStorage.setItem('selected-icon', getIcon(newTheme));
     themeButton.innerText = getIcon(newTheme);
 }
 
 function getIcon(theme) {
-    return theme === 'dark' ? darkTheme : lightTheme;
+    return theme === 'dark' ? darkTheme: lightTheme;
 }
 
 function getThemeText() {
